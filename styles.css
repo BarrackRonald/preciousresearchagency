@@ -1,3 +1,21 @@
+@font-face {
+    font-family: 'Calibre';
+    src: url('/fonts/Calibre-Regular.woff2') format('woff2'),
+         url('/fonts/Calibre-Regular.woff') format('woff'),
+         url('/fonts/Calibre-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Calibre';
+    src: url('/fonts/Calibre-Bold.woff2') format('woff2'),
+         url('/fonts/Calibre-Bold.woff') format('woff'),
+         url('/fonts/Calibre-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
 /* Global Reset */
 * {
     margin: 0;
@@ -6,7 +24,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Calibre', Arial, sans-serif;
     line-height: 1.6;
 }
 
