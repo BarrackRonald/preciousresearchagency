@@ -54,7 +54,7 @@
                         </ul>
                     </li>
                     <li class="menu-item">
-                        <a href="#academy">The Academy <span class="arrow">↓</span></a>
+                        <a href="#academy">Consultation <span class="arrow">↓</span></a>
                         <ul class="sub-menu">
                             <li><a href="#sub-academy1">Sub Academy 1</a></li>
                             <li><a href="#sub-academy2">Sub Academy 2</a></li>
@@ -218,7 +218,9 @@
         </div>
     </div>
 </section>
-    <section class="latest-content">
+
+<!--Latest content and events-->
+<section class="latest-content">
     <div class="container">
         <div class="section-header">
             <h2>Latest content</h2>
@@ -301,8 +303,122 @@
     </div>
 </section>
 
- 
-    
+<!--Latest Recording-->
+<section class="latest-recordings">
+    <div class="section-header">
+        <h2>Latest event recordings</h2>
+        <a href="#view-all-recordings" class="view-all">View all event recordings ></a>
+    </div>
+    <div class="recordings-container">
+        <button class="arrow left-arrow">&lt;</button>
+        <div class="recordings">
+            <!-- Recording 1 -->
+            <div class="recording">
+                <h4>RESEARCH EVENT — RECORDING ></h4>
+                <h3>Implications of the new US presidency: what awaits Ukraine?</h3>
+                <p>
+                    After 1000 days of Kyiv’s resistance, experts discuss how to secure Ukraine's and Europe's future.
+                </p>
+                <span class="date-time">19 November 2024 — 2:00PM to 3:30PM</span>
+            </div>
+            <!-- Recording 2 -->
+            <div class="recording">
+                <h4>RESEARCH EVENT — RECORDING ></h4>
+                <h3>What are the top economic priorities for the new US President?</h3>
+                <p>
+                    A post-US election discussion on the outlook for US economic policy and its implications globally.
+                </p>
+                <span class="date-time">19 November 2024 — 8:00AM to 9:15AM</span>
+            </div>
+            <!-- Recording 3 -->
+            <div class="recording">
+                <h4>RESEARCH EVENT — RECORDING ></h4>
+                <h3>Addressing illegal gold mining: International policy priorities</h3>
+                <p>
+                    Experts discuss the global artisanal and small-scale gold mining landscape and related policies.
+                </p>
+                <span class="date-time">18 November 2024 — 11:30AM to 1:00PM</span>
+            </div>
+        </div>
+        <button class="arrow right-arrow">&gt;</button>
+    </div>
+    <div class="pagination">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</section>
+
+<section class="support-us">
+    <div class="support-content">
+        <h2>Support us</h2>
+        <p>
+            Donate today to help secure our future as the home of independent thinking, or join our international network as a member.
+        </p>
+    </div>
+    <div class="support-image">
+        <img src="https://via.placeholder.com/500x250" alt="Support Us">
+        <a href="#support-us" class="btn">Find out more ></a>
+    </div>
+</section>
+
+
+
+
+<script>
+    // JavaScript to handle pagination state changes
+document.querySelectorAll('.pagination .dot').forEach(dot => {
+    dot.addEventListener('click', function () {
+        // Remove active class from all dots
+        document.querySelectorAll('.pagination .dot').forEach(dot => dot.classList.remove('active'));
+        // Add active class to the clicked dot
+        this.classList.add('active');
+    });
+});
+
+</script>  
+<script>
+    // Pagination and Arrow Functionality
+const recordings = document.querySelector('.recordings');
+const dots = document.querySelectorAll('.pagination .dot');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+
+// Function to update active dot
+function updateActiveDot(index) {
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+}
+
+// Event Listeners for Arrows
+let currentIndex = 0;
+rightArrow.addEventListener('click', () => {
+    if (currentIndex < dots.length - 1) {
+        currentIndex++;
+        recordings.scrollBy({ left: 320, behavior: 'smooth' });
+        updateActiveDot(currentIndex);
+    }
+});
+
+leftArrow.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        recordings.scrollBy({ left: -320, behavior: 'smooth' });
+        updateActiveDot(currentIndex);
+    }
+});
+
+// Event Listeners for Dots
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        const scrollAmount = 320 * (index - currentIndex);
+        recordings.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        currentIndex = index;
+        updateActiveDot(currentIndex);
+    });
+});
+
+</script>  
     
     
     
